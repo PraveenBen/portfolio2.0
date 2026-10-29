@@ -31,26 +31,15 @@ export default function ContactPage() {
     setIsSubmitting(true);
     setErrorMessage(null);
 
-    const accessKey =
-      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
-      "d2c686fa-072b-462d-966b-02cdf2447f22";
-
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      // 1. Send via local API endpoint (routes to both Web3Forms email & Discord Webhook)
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify({
-          access_key: accessKey,
-          name: formData.name,
-          email: formData.email,
-          subject: `[Portfolio Inquiry] ${formData.subject} (${formData.projectScope})`,
-          domain: formData.projectScope,
-          message: formData.message,
-          from_name: formData.name,
-        }),
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
@@ -58,9 +47,32 @@ export default function ContactPage() {
       if (data.success) {
         setIsSuccess(true);
       } else {
-        setErrorMessage(
-          data.message || "Failed to dispatch payload. Please contact directly via email."
-        );
+        // Fallback directly to Web3Forms client-side if API route encountered issue
+        const directRes = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: "d2c686fa-072b-462d-966b-02cdf2447f22",
+            name: formData.name,
+            email: formData.email,
+            subject: `[Portfolio Inquiry] ${formData.subject} (${formData.projectScope})`,
+            domain: formData.projectScope,
+            message: formData.message,
+            from_name: formData.name,
+          }),
+        });
+
+        const directData = await directRes.json();
+        if (directData.success) {
+          setIsSuccess(true);
+        } else {
+          setErrorMessage(
+            data.message || "Failed to dispatch payload. Please contact directly via email."
+          );
+        }
       }
     } catch {
       setErrorMessage(
