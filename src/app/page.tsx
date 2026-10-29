@@ -50,7 +50,7 @@ export default function HomePage() {
           >
             Data Engineering & AI Pipelines. <br />
             <span className="text-[#A1A1AA]">
-              Blending Petabyte-Scale Data with Digital Marketing & Design.
+              Blending Petabyte-Scale Data with Design.
             </span>
           </motion.h1>
 
