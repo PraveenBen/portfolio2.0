@@ -24,15 +24,51 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
 
-    setTimeout(() => {
+    const accessKey =
+      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
+      "d2c686fa-072b-462d-966b-02cdf2447f22";
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          subject: `[Portfolio Inquiry] ${formData.subject} (${formData.projectScope})`,
+          domain: formData.projectScope,
+          message: formData.message,
+          from_name: formData.name,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSuccess(true);
+      } else {
+        setErrorMessage(
+          data.message || "Failed to dispatch payload. Please contact directly via email."
+        );
+      }
+    } catch {
+      setErrorMessage(
+        "Network connection error. Please email praveenbenakannanavar@outlook.com directly."
+      );
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 800);
+    }
   };
 
   return (
@@ -304,6 +340,13 @@ export default function ContactPage() {
                       className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-[#FAFAFA] placeholder-[#A1A1AA]/50 font-mono text-xs focus:outline-none focus:border-[#10B981] transition-colors resize-y"
                     />
                   </div>
+
+                  {/* Error Alert */}
+                  {errorMessage && (
+                    <div className="p-3 rounded-lg bg-[#09090B] border border-red-500/40 text-red-400 text-xs font-mono">
+                      {errorMessage}
+                    </div>
+                  )}
 
                   {/* Submit Button */}
                   <button
