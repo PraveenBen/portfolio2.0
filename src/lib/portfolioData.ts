@@ -223,7 +223,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
         external: true,
       },
     ],
-    colorAccent: "#00F0FF",
+    colorAccent: "#10B981",
   },
   {
     id: "solar-manufacturing-realtime-cdc",
@@ -307,7 +307,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
         external: true,
       },
     ],
-    colorAccent: "#FFE600",
+    colorAccent: "#10B981",
   },
   {
     id: "voice-to-trade-ai-engine",
@@ -383,7 +383,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
         external: true,
       },
     ],
-    colorAccent: "#A855F7",
+    colorAccent: "#10B981",
   },
   {
     id: "flipkart-ads-scale-etl",
@@ -469,7 +469,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
         external: true,
       },
     ],
-    colorAccent: "#39FF14",
+    colorAccent: "#10B981",
   },
   {
     id: "infosys-enterprise-db-tuning",
@@ -530,7 +530,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
         external: true,
       },
     ],
-    colorAccent: "#00F0FF",
+    colorAccent: "#10B981",
   },
 ];
 
@@ -660,7 +660,7 @@ export const HYBRID_SKILLS: HybridSkillCategory[] = [
   {
     title: "Data Engineering & Stream Architecture",
     tagline: "Petabyte-scale distributed ingestion, stateful processing, and OLAP analytics",
-    color: "#00F0FF",
+    color: "#10B981",
     iconName: "Database",
     description:
       "3+ years building high-throughput pipelines. From 19-VM cross-cloud CDC topologies to RocksDB stateful deduplication on Kubernetes handling 21x traffic spikes.",
@@ -676,7 +676,7 @@ export const HYBRID_SKILLS: HybridSkillCategory[] = [
   {
     title: "Frontier AI, Red-Teaming & RLHF",
     tagline: "Adversarial evaluation, multi-agent reasoning, and model alignment",
-    color: "#A855F7",
+    color: "#10B981",
     iconName: "Cpu",
     description:
       "Specialized in constructing adversarial multi-hop scenarios across 13 mock enterprise tool environments, stress-testing frontier LLMs, and executing RLHF for Google Gemini.",
@@ -690,7 +690,7 @@ export const HYBRID_SKILLS: HybridSkillCategory[] = [
   {
     title: "Digital Marketing, SEO, AEO & GEO",
     tagline: "Bridging technical infrastructure with AI engine visibility and algorithmic growth",
-    color: "#39FF14",
+    color: "#10B981",
     iconName: "TrendingUp",
     description:
       "Expertise in modern Generative Engine Optimization (GEO), Answer Engine Optimization (AEO), and Technical SEO — architecting structured data (JSON-LD) for LLMs and crawler indexing.",
@@ -704,7 +704,7 @@ export const HYBRID_SKILLS: HybridSkillCategory[] = [
   {
     title: "Creative Graphic Design & Visual Communication",
     tagline: "Translating complex distributed topologies into stunning visual assets",
-    color: "#FFE600",
+    color: "#10B981",
     iconName: "Palette",
     description:
       "A rare dual-brain competency: Combining rigorous backend engineering with high-end graphic design, UI/UX prototyping, brand identity design, and technical data art.",

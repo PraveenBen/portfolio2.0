@@ -5,17 +5,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Terminal,
-  Zap,
   FolderGit2,
   FileDown,
-  ShieldAlert,
-  Server,
-  Database,
   Cpu,
   Mail,
-  CheckCircle2,
-  ExternalLink,
+  Zap,
 } from "lucide-react";
 import { PERSONAL_INFO, PROJECTS_DATA } from "@/lib/portfolioData";
 import { MetricsCounter } from "@/components/MetricsCounter";
@@ -27,99 +21,98 @@ export default function HomePage() {
   const featuredProjects = PROJECTS_DATA.filter((p) => p.featured).slice(0, 3);
 
   return (
-    <div className="space-y-16 sm:space-y-24 pb-16">
+    <div className="space-y-14 sm:space-y-20 pb-16">
       {/* Hero Section */}
       <section
         aria-label="Hero Introduction"
-        className="relative min-h-[85vh] flex flex-col justify-center px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12"
+        className="relative min-h-[75vh] flex flex-col justify-center px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12"
       >
-        <div className="max-w-6xl mx-auto w-full">
-          {/* Top Terminal Status Tag */}
+        <div className="max-w-5xl mx-auto w-full">
+          {/* Top Status Tag */}
           <motion.div
-            initial={{ opacity: 0, y: -15 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-xs font-mono mb-6"
+            transition={{ duration: 0.4 }}
+            className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#18181B] border border-[#27272A] text-xs font-mono mb-6"
           >
-            <span className="w-2 h-2 rounded-full bg-[#39FF14] animate-ping" />
-            <span className="text-white font-medium">CLUSTER STATUS:</span>
-            <span className="text-[#00F0FF]">ACTIVE PIPELINE ORCHESTRATION</span>
-            <span className="text-zinc-600 hidden sm:inline">|</span>
-            <span className="text-zinc-400 hidden sm:inline">BANGALORE, IN</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
+            <span className="text-[#FAFAFA] font-medium">PIPELINE ARCHITECTURE</span>
+            <span className="text-[#27272A]">|</span>
+            <span className="text-[#A1A1AA]">BANGALORE, IN</span>
           </motion.div>
 
           {/* Main Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-mono text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15]"
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="font-sans text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#FAFAFA] tracking-tight leading-[1.12]"
           >
-            Data Engineering & AI Pipelines{" "}
-            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] via-[#FFE600] to-[#39FF14]">
+            Data Engineering & AI Pipelines. <br />
+            <span className="text-[#A1A1AA]">
               Blending Petabyte-Scale Data with Digital Marketing & Design.
             </span>
           </motion.h1>
 
-          {/* Subtext & Terminal Overview */}
+          {/* Subtext */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-zinc-300 text-base sm:text-lg max-w-3xl leading-relaxed font-sans"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mt-6 text-[#A1A1AA] text-base sm:text-lg max-w-3xl leading-relaxed font-sans"
           >
-            I am <strong className="text-white font-semibold">{PERSONAL_INFO.name}</strong>, a Data & AI Pipeline Engineer with 3+ years architecting production distributed platforms. From provisioning a <strong className="text-[#FFE600]">19-VM HA CDC stack</strong> streaming 24 MSSQL tables in 3 days, to scaling <strong className="text-[#39FF14]">Flipkart Ads through 21x spikes</strong>, and <strong className="text-[#00F0FF]">red-teaming frontier AI models</strong> across 13 enterprise tool environments.
+            I am <strong className="text-[#FAFAFA] font-medium">{PERSONAL_INFO.name}</strong>, a Data & AI Pipeline Engineer with 3+ years architecting production distributed platforms. From provisioning a <strong className="text-[#FAFAFA]">19-VM HA CDC stack</strong> streaming 24 MSSQL tables in 3 days, to scaling <strong className="text-[#FAFAFA]">Flipkart Ads through 21x traffic spikes</strong>, and <strong className="text-[#FAFAFA]">red-teaming frontier AI models</strong> across 13 enterprise tool environments.
           </motion.p>
 
           {/* Terminal Command Prompt Card */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6 p-4 rounded-xl bg-black/70 border border-white/10 font-mono text-xs sm:text-sm text-zinc-300 max-w-3xl flex items-center justify-between gap-4 overflow-x-auto shadow-inner"
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="mt-6 p-3.5 rounded-xl bg-[#18181B] border border-[#27272A] font-mono text-xs sm:text-sm text-[#A1A1AA] max-w-3xl flex items-center justify-between gap-4 overflow-x-auto"
           >
             <div className="flex items-center space-x-2">
-              <span className="text-[#39FF14]">root@praveen:~$</span>
-              <span className="text-white">
+              <span className="text-[#10B981]">$</span>
+              <span className="text-[#FAFAFA]">
                 pipeline --deploy --stack=Flink,Kafka,ClickHouse,RocksDB --scale=PB
               </span>
             </div>
-            <span className="text-[#00F0FF] text-[11px] font-bold whitespace-nowrap bg-[#00F0FF]/10 px-2 py-0.5 rounded border border-[#00F0FF]/20">
-              [EXIT CODE 0: HEALTHY]
+            <span className="text-[#10B981] text-[11px] whitespace-nowrap bg-[#09090B] px-2 py-0.5 rounded border border-[#27272A]">
+              EXIT 0 [HEALTHY]
             </span>
           </motion.div>
 
           {/* CTA Action Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-8 flex flex-wrap items-center gap-4"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-8 flex flex-wrap items-center gap-3.5"
           >
             <Link
               href="/projects"
-              className="px-6 py-3.5 rounded-xl bg-[#00F0FF] text-black font-mono font-bold text-sm hover:bg-[#00F0FF]/90 hover:shadow-[0_0_25px_rgba(0,240,255,0.4)] transition-all flex items-center space-x-2 group"
+              className="px-5 py-3 rounded-lg bg-[#10B981] text-[#09090B] font-sans font-semibold text-sm hover:opacity-90 transition-opacity flex items-center space-x-2 group"
             >
               <FolderGit2 className="w-4 h-4" />
-              <span>Explore Engineered Projects</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <span>Explore Projects</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
 
             <Link
               href="/experience"
-              className="px-6 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-white font-mono font-semibold text-sm hover:border-[#00F0FF]/50 hover:bg-white/[0.08] transition-all flex items-center space-x-2"
+              className="px-5 py-3 rounded-lg bg-[#18181B] border border-[#27272A] text-[#FAFAFA] font-sans font-medium text-sm hover:border-[#A1A1AA] transition-colors flex items-center space-x-2"
             >
-              <Zap className="w-4 h-4 text-[#FFE600]" />
-              <span>Experience & Hybrid Skills</span>
+              <Zap className="w-4 h-4 text-[#A1A1AA]" />
+              <span>Experience & Skills</span>
             </Link>
 
             <a
               href="/Praveen_T_FlowCV_Resume_2026-10-01 (1).pdf"
               download="Praveen_T_Data_Engineer_Resume.pdf"
-              className="px-5 py-3.5 rounded-xl bg-black/60 border border-[#FFE600]/40 text-[#FFE600] font-mono font-semibold text-sm hover:bg-[#FFE600]/10 hover:shadow-[0_0_20px_rgba(255,230,0,0.25)] transition-all flex items-center space-x-2"
+              className="px-4 py-3 rounded-lg bg-[#18181B] border border-[#27272A] text-[#A1A1AA] font-mono text-xs hover:text-[#FAFAFA] hover:border-[#A1A1AA] transition-colors flex items-center space-x-2"
             >
               <FileDown className="w-4 h-4" />
-              <span>Download CV</span>
+              <span>Resume PDF</span>
             </a>
           </motion.div>
         </div>
@@ -128,77 +121,67 @@ export default function HomePage() {
       {/* Metrics Bar */}
       <MetricsCounter />
 
-      {/* Infinite Skills Marquee */}
+      {/* Skills Marquee */}
       <SkillsMarquee />
 
-      {/* Interactive Topology Visualizer */}
+      {/* Topology Visualizer */}
       <section aria-label="Interactive Topology" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ArchitectureDiagram />
       </section>
 
-      {/* Featured Projects Showcase */}
+      {/* Featured Projects Section */}
       <section aria-label="Featured Projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4 pb-4 border-b border-white/10">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4 pb-4 border-b border-[#27272A]">
           <div>
-            <div className="flex items-center space-x-2 text-xs font-mono text-[#00F0FF] uppercase tracking-widest mb-1">
+            <div className="flex items-center space-x-2 text-xs font-mono text-[#10B981] uppercase tracking-widest mb-1">
               <FolderGit2 className="w-4 h-4" />
-              <span>Mission-Critical Case Studies</span>
+              <span>Case Studies</span>
             </div>
-            <h2 className="font-mono text-2xl sm:text-3xl font-bold text-white">
-              High-Impact Engineering Highlights
+            <h2 className="font-sans text-2xl sm:text-3xl font-bold tracking-tight text-[#FAFAFA]">
+              Featured Engineering Deployments
             </h2>
           </div>
           <Link
             href="/projects"
-            className="flex items-center space-x-2 text-xs font-mono text-[#00F0FF] hover:text-white transition-colors"
+            className="flex items-center space-x-1.5 text-xs font-mono text-[#FAFAFA] hover:text-[#10B981] transition-colors"
           >
-            <span>View All Projects & Proofs</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>View All Projects</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {featuredProjects.map((project, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {featuredProjects.map((project) => (
             <div
               key={project.id}
-              className="p-6 rounded-2xl glass-panel border border-white/10 flex flex-col justify-between group hover:border-[#00F0FF]/50 transition-all shadow-lg"
+              className="p-6 rounded-xl bg-[#18181B] border border-[#27272A] hover:border-[#3F3F46] flex flex-col justify-between transition-colors"
             >
               <div>
                 <div className="flex items-center justify-between text-xs font-mono mb-3">
-                  <span
-                    className="px-2 py-0.5 rounded text-[10px] font-bold"
-                    style={{
-                      color: project.colorAccent,
-                      backgroundColor: `${project.colorAccent}15`,
-                      border: `1px solid ${project.colorAccent}30`,
-                    }}
-                  >
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#09090B] border border-[#27272A] text-[#A1A1AA]">
                     {project.category}
                   </span>
-                  <span className="text-zinc-500">{project.period}</span>
+                  <span className="text-[#A1A1AA]">{project.period}</span>
                 </div>
-                <h3 className="font-mono text-lg font-bold text-white group-hover:text-glow-cyan transition-colors">
+                <h3 className="font-sans text-lg font-bold tracking-tight text-[#FAFAFA]">
                   {project.title}
                 </h3>
-                <p className="font-mono text-xs text-[#00F0FF] mt-1 mb-3">
+                <p className="font-mono text-xs text-[#10B981] mt-1 mb-3">
                   {project.client}
                 </p>
-                <p className="text-zinc-300 text-xs line-clamp-3 leading-relaxed font-sans mb-4">
+                <p className="text-[#A1A1AA] text-xs line-clamp-3 leading-relaxed font-sans mb-4">
                   {project.shortDescription}
                 </p>
               </div>
 
               <div>
-                <div className="grid grid-cols-2 gap-2 mb-4 pt-3 border-t border-white/5">
+                <div className="grid grid-cols-2 gap-2 mb-4 pt-3 border-t border-[#27272A]">
                   {project.metrics.slice(0, 2).map((m, mIdx) => (
-                    <div key={mIdx} className="bg-black/40 p-2 rounded-lg">
-                      <div
-                        className="font-mono font-bold text-sm"
-                        style={{ color: project.colorAccent }}
-                      >
+                    <div key={mIdx} className="bg-[#09090B] p-2 rounded border border-[#27272A]">
+                      <div className="font-mono font-bold text-sm text-[#FAFAFA]">
                         {m.value}
                       </div>
-                      <div className="text-[9px] font-mono text-zinc-400">
+                      <div className="text-[9px] font-mono text-[#A1A1AA]">
                         {m.label}
                       </div>
                     </div>
@@ -207,10 +190,10 @@ export default function HomePage() {
 
                 <Link
                   href="/projects"
-                  className="flex items-center justify-between text-xs font-mono font-semibold text-white group-hover:text-[#00F0FF] transition-colors pt-2"
+                  className="flex items-center justify-between text-xs font-mono text-[#FAFAFA] hover:text-[#10B981] transition-colors pt-1"
                 >
-                  <span>Inspect Architecture Spec</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <span>Inspect Architecture</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </div>
@@ -221,23 +204,23 @@ export default function HomePage() {
       {/* Dual-Brain Hybrid Competencies */}
       <HybridSkillMatrix />
 
-      {/* Generative Engine Optimization (GEO & AEO) Indexing Section */}
+      {/* GEO & AEO FAQ Block */}
       <section
         aria-label="GEO Architecture Index"
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="p-8 rounded-2xl bg-black/80 border border-white/10 relative overflow-hidden">
-          <div className="flex items-center space-x-2 text-xs font-mono text-[#39FF14] uppercase tracking-wider mb-2">
+        <div className="p-7 sm:p-8 rounded-xl bg-[#18181B] border border-[#27272A]">
+          <div className="flex items-center space-x-2 text-xs font-mono text-[#10B981] uppercase tracking-wider mb-2">
             <Cpu className="w-4 h-4" />
-            <span>Generative Engine Optimization (GEO) & AEO Authority Block</span>
+            <span>GEO & AEO Authority Reference</span>
           </div>
-          <h2 className="font-mono text-xl sm:text-2xl font-bold text-white mb-4">
-            Technical FAQs & LLM Indexing Summary
+          <h2 className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-[#FAFAFA] mb-4">
+            Technical Summary & Q&A
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-zinc-300 font-sans">
-            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
-              <h3 className="font-mono font-bold text-white text-sm text-[#00F0FF]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-[#A1A1AA] font-sans">
+            <div className="p-4 rounded-lg bg-[#09090B] border border-[#27272A] space-y-2">
+              <h3 className="font-sans font-semibold text-[#FAFAFA] text-sm">
                 What is Praveen T&apos;s data scale and distributed architecture experience?
               </h3>
               <p className="leading-relaxed">
@@ -245,8 +228,8 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
-              <h3 className="font-mono font-bold text-white text-sm text-[#FFE600]">
+            <div className="p-4 rounded-lg bg-[#09090B] border border-[#27272A] space-y-2">
+              <h3 className="font-sans font-semibold text-[#FAFAFA] text-sm">
                 How does Praveen contribute to frontier AI evaluation and red-teaming?
               </h3>
               <p className="leading-relaxed">
@@ -257,33 +240,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact Terminal Call-to-Action */}
+      {/* Minimalist CTA */}
       <section
         aria-label="Direct Connect"
         className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
       >
-        <div className="p-8 sm:p-12 rounded-3xl glass-panel border border-[#00F0FF]/30 space-y-4 shadow-[0_0_50px_rgba(0,240,255,0.15)] relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-zinc-600">
-            [SYS_CONNECT]
-          </div>
-          <h2 className="font-mono text-2xl sm:text-3xl font-extrabold text-white">
-            Ready to Build Resilient Petabyte-Scale Pipelines?
+        <div className="p-8 sm:p-10 rounded-2xl bg-[#18181B] border border-[#27272A] space-y-4">
+          <h2 className="font-sans text-2xl sm:text-3xl font-bold tracking-tight text-[#FAFAFA]">
+            Ready to Build Resilient Distributed Pipelines?
           </h2>
-          <p className="text-zinc-300 text-sm max-w-xl mx-auto font-sans">
-            Whether you need high-throughput CDC topologies, Spark/Flink performance tuning,
-            frontier AI red-teaming, or high-impact digital marketing & design.
+          <p className="text-[#A1A1AA] text-sm max-w-xl mx-auto font-sans leading-relaxed">
+            Available for senior Data Engineering, Streaming Architecture (Spark, Flink, Kafka),
+            Frontier AI Red-Teaming, and hybrid technical design projects.
           </p>
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/contact"
-              className="px-6 py-3 rounded-xl bg-[#00F0FF] text-black font-mono font-bold text-sm hover:shadow-[0_0_20px_#00F0FF] transition-all flex items-center space-x-2"
+              className="px-5 py-2.5 rounded-lg bg-[#10B981] text-[#09090B] font-sans font-semibold text-sm hover:opacity-90 transition-opacity flex items-center space-x-2"
             >
               <Mail className="w-4 h-4" />
-              <span>Launch Contact Terminal</span>
+              <span>Contact Terminal</span>
             </Link>
             <a
               href={`mailto:${PERSONAL_INFO.email}`}
-              className="px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-mono text-sm hover:border-[#00F0FF] transition-all"
+              className="px-5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-[#FAFAFA] font-mono text-xs hover:border-[#A1A1AA] transition-colors"
             >
               Direct Email
             </a>

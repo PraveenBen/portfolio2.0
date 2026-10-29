@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -7,18 +7,20 @@ import { NeuralBackground } from "@/components/NeuralBackground";
 import { JsonLd } from "@/components/JsonLd";
 import { PERSONAL_INFO } from "@/lib/portfolioData";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {
-  themeColor: "#050505",
+  themeColor: "#09090B",
   width: "device-width",
   initialScale: 1,
 };
@@ -26,11 +28,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://praveen-portfolio.vercel.app"),
   title: {
-    default: `${PERSONAL_INFO.name} | Data & AI Pipeline Engineer (Petabyte-Scale, CDC, Red-Teaming)`,
-    template: `%s | ${PERSONAL_INFO.name} — Data & AI Pipeline Engineer`,
+    default: `${PERSONAL_INFO.name} | Data & AI Pipeline Engineer`,
+    template: `%s | ${PERSONAL_INFO.name}`,
   },
   description:
-    "Production Data & AI Pipeline Engineer specialized in streaming architectures at Flipkart scale, 19-VM CDC platforms for solar manufacturing (Tata Power), SEBI-compliant Voice2Trade AI (Bajaj Broking), and frontier LLM adversarial red-teaming with multi-tool evaluation.",
+    "Production Data & AI Pipeline Engineer specialized in streaming architectures at Flipkart scale, 19-VM CDC platforms for solar manufacturing (Tata Power), SEBI-compliant Voice2Trade AI (Bajaj Broking), and frontier LLM adversarial red-teaming.",
   keywords: [
     "Praveen T",
     "Data Engineer",
@@ -49,14 +51,11 @@ export const metadata: Metadata = {
     "RocksDB",
     "Aerospike",
     "Google Cloud Platform",
-    "GCP Certified",
     "SEBI Compliance",
     "RLHF",
     "GEO",
     "AEO",
     "SEO",
-    "Photoshop",
-    "Illustrator",
   ],
   authors: [{ name: PERSONAL_INFO.name, url: PERSONAL_INFO.gitHub }],
   creator: PERSONAL_INFO.name,
@@ -78,14 +77,14 @@ export const metadata: Metadata = {
     url: "https://praveen-portfolio.vercel.app",
     title: `${PERSONAL_INFO.name} | Data & AI Pipeline Engineer`,
     description:
-      "Blending Petabyte-Scale streaming systems (Kafka, Flink, Spark, CDC) with frontier AI evaluation, digital marketing (AEO/GEO), and high-end design.",
+      "Petabyte-scale distributed data pipelines, 19-VM CDC for solar manufacturing, and frontier LLM red-teaming.",
     siteName: `${PERSONAL_INFO.name} Portfolio`,
   },
   twitter: {
     card: "summary_large_image",
     title: `${PERSONAL_INFO.name} | Data & AI Pipeline Engineer`,
     description:
-      "Petabyte-scale data pipelines, 19-VM CDC for solar manufacturing, Flipkart ad scale, and frontier LLM red-teaming.",
+      "Petabyte-scale data pipelines, 19-VM CDC for solar manufacturing, and frontier LLM red-teaming.",
   },
   alternates: {
     canonical: "https://praveen-portfolio.vercel.app",
@@ -100,12 +99,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+      className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
     >
       <head>
         <JsonLd />
       </head>
-      <body className="min-h-full flex flex-col bg-[#050505] text-[#ededed] font-sans selection:bg-[#00F0FF]/20 selection:text-[#00F0FF]">
+      <body className="min-h-full flex flex-col bg-[#09090B] text-[#FAFAFA] font-sans selection:bg-[#10B981]/20 selection:text-[#10B981]">
         <NeuralBackground />
         <Navbar />
         <main className="flex-1 pt-20 relative z-10">{children}</main>

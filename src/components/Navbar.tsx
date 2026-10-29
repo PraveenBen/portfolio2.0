@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Activity,
   Terminal,
   FolderGit2,
   Briefcase,
@@ -42,54 +41,50 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Overview", href: "/", icon: Terminal },
-    { name: "Projects & Architecture", href: "/projects", icon: FolderGit2 },
-    { name: "Experience & Hybrid Skills", href: "/experience", icon: Briefcase },
-    { name: "Contact Terminal", href: "/contact", icon: Mail },
+    { name: "Projects", href: "/projects", icon: FolderGit2 },
+    { name: "Experience", href: "/experience", icon: Briefcase },
+    { name: "Contact", href: "/contact", icon: Mail },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 py-3">
+    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 py-3.5">
       <div className="max-w-7xl mx-auto">
         <nav
           aria-label="Main Navigation"
-          className="relative flex items-center justify-between px-4 sm:px-6 py-2.5 rounded-2xl glass-panel border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.8)] backdrop-blur-xl"
+          className="relative flex items-center justify-between px-4 sm:px-6 py-2.5 rounded-xl bg-[#18181B]/80 border border-[#27272A] backdrop-blur-md shadow-sm"
         >
-          {/* Brand & HUD Status */}
+          {/* Brand & Status */}
           <div className="flex items-center space-x-3 sm:space-x-4">
             <Link
               href="/"
-              className="flex items-center space-x-2.5 group focus:outline-none focus:ring-2 focus:ring-[#00F0FF] rounded-lg p-1"
+              className="flex items-center space-x-2.5 group focus:outline-none"
             >
-              <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-black border border-[#00F0FF]/40 text-[#00F0FF] group-hover:border-[#00F0FF] group-hover:shadow-[0_0_15px_rgba(0,240,255,0.4)] transition-all">
-                <span className="font-mono font-bold text-sm">PT</span>
-                <span className="absolute -top-1 -right-1 flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00F0FF] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00F0FF]"></span>
-                </span>
+              <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-[#09090B] border border-[#27272A] text-[#FAFAFA] group-hover:border-[#10B981] transition-colors">
+                <span className="font-mono font-bold text-xs">PT</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-xs font-bold tracking-widest text-white uppercase group-hover:text-[#00F0FF] transition-colors">
+                <span className="font-sans text-xs font-semibold tracking-tight text-[#FAFAFA] group-hover:text-[#10B981] transition-colors">
                   {PERSONAL_INFO.name}
                 </span>
-                <span className="text-[10px] font-mono text-[#00F0FF] tracking-wider hidden sm:inline">
-                  DATA & AI PIPELINE ENG
+                <span className="text-[10px] font-mono text-[#A1A1AA] tracking-wider hidden sm:inline">
+                  DATA & AI PIPELINES
                 </span>
               </div>
             </Link>
 
-            {/* Live Telemetry Ticker (Desktop) */}
-            <div className="hidden xl:flex items-center space-x-2 pl-3 border-l border-white/10 text-[11px] font-mono text-zinc-400">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#39FF14] animate-pulse" />
-              <span className="text-[#39FF14] font-medium">PIPELINES HEALTHY</span>
-              <span className="text-zinc-600">|</span>
-              <span className="text-zinc-400">CDC SYNC: 100%</span>
-              <span className="text-zinc-600">|</span>
-              <span className="text-zinc-300">{currentTime || "LIVE"}</span>
+            {/* Status Telemetry Ticker (Desktop) */}
+            <div className="hidden xl:flex items-center space-x-2 pl-3 border-l border-[#27272A] text-[11px] font-mono text-[#A1A1AA]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
+              <span className="text-[#FAFAFA]">PIPELINES HEALTHY</span>
+              <span className="text-[#27272A]">|</span>
+              <span>CDC SYNC: 100%</span>
+              <span className="text-[#27272A]">|</span>
+              <span>{currentTime || "LIVE"}</span>
             </div>
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
+          <div className="hidden md:flex items-center space-x-1">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               const Icon = link.icon;
@@ -97,10 +92,10 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-3.5 py-1.5 rounded-lg text-xs font-mono tracking-wide transition-all duration-200 flex items-center space-x-1.5 ${
+                  className={`relative px-3 py-1.5 rounded-lg text-xs font-sans tracking-tight transition-colors flex items-center space-x-1.5 ${
                     isActive
-                      ? "text-[#00F0FF] bg-[#00F0FF]/10 font-semibold shadow-[0_0_12px_rgba(0,240,255,0.15)] border border-[#00F0FF]/30"
-                      : "text-zinc-300 hover:text-white hover:bg-white/[0.05]"
+                      ? "text-[#FAFAFA] font-medium bg-[#27272A]"
+                      : "text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#27272A]/50"
                   }`}
                 >
                   <Icon className="w-3.5 h-3.5" />
@@ -108,8 +103,8 @@ export function Navbar() {
                   {isActive && (
                     <motion.div
                       layoutId="activeNavIndicator"
-                      className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#00F0FF]"
-                      transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                      className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#10B981]"
+                      transition={{ type: "spring", stiffness: 400, damping: 35 }}
                     />
                   )}
                 </Link>
@@ -118,13 +113,13 @@ export function Navbar() {
           </div>
 
           {/* Actions & Socials */}
-          <div className="hidden sm:flex items-center space-x-2.5">
+          <div className="hidden sm:flex items-center space-x-2">
             <a
               href={PERSONAL_INFO.gitHub}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Profile"
-              className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-white/[0.06] transition-colors"
+              className="p-1.5 rounded-lg text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#27272A] transition-colors"
             >
               <GithubIcon className="w-4 h-4" />
             </a>
@@ -133,7 +128,7 @@ export function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
-              className="p-1.5 rounded-lg text-zinc-400 hover:text-[#00F0FF] hover:bg-white/[0.06] transition-colors"
+              className="p-1.5 rounded-lg text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#27272A] transition-colors"
             >
               <LinkedinIcon className="w-4 h-4" />
             </a>
@@ -141,10 +136,10 @@ export function Navbar() {
               href="/Praveen_T_FlowCV_Resume_2026-10-01 (1).pdf"
               target="_blank"
               download="Praveen_T_Data_Engineer_Resume.pdf"
-              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-[#FFE600]/10 border border-[#FFE600]/40 text-[#FFE600] text-xs font-mono font-medium hover:bg-[#FFE600]/20 hover:shadow-[0_0_15px_rgba(255,230,0,0.3)] transition-all"
+              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-[#18181B] border border-[#27272A] text-[#FAFAFA] text-xs font-mono hover:border-[#10B981] hover:text-[#10B981] transition-colors"
             >
               <FileDown className="w-3.5 h-3.5" />
-              <span>Resume</span>
+              <span>CV</span>
             </a>
           </div>
 
@@ -153,9 +148,9 @@ export function Navbar() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle Navigation Menu"
-              className="p-2 rounded-lg text-zinc-300 hover:text-white hover:bg-white/10"
+              className="p-2 rounded-lg text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#27272A]"
             >
-              {isMobileMenuOpen ? <X className="w-5 h-5 text-[#00F0FF]" /> : <Menu className="w-5 h-5" />}
+              {isMobileMenuOpen ? <X className="w-5 h-5 text-[#FAFAFA]" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </nav>
@@ -167,10 +162,14 @@ export function Navbar() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="sm:hidden mt-2 p-4 rounded-xl glass-panel border border-[#00F0FF]/30 space-y-2 shadow-2xl"
+              transition={{ duration: 0.2 }}
+              className="sm:hidden mt-2 p-4 rounded-xl bg-[#18181B] border border-[#27272A] space-y-2 shadow-xl"
             >
-              <div className="flex items-center justify-between pb-2 mb-2 border-b border-white/10 text-[11px] font-mono text-[#39FF14]">
-                <span>STATUS: OPERATIONAL</span>
+              <div className="flex items-center justify-between pb-2 mb-2 border-b border-[#27272A] text-[11px] font-mono text-[#A1A1AA]">
+                <span className="flex items-center space-x-1.5 text-[#FAFAFA]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
+                  <span>OPERATIONAL</span>
+                </span>
                 <span>{currentTime}</span>
               </div>
               {navLinks.map((link) => {
@@ -181,10 +180,10 @@ export function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-mono ${
+                    className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-sans tracking-tight ${
                       isActive
-                        ? "text-[#00F0FF] bg-[#00F0FF]/15 border border-[#00F0FF]/40 font-bold"
-                        : "text-zinc-300 hover:text-white hover:bg-white/5"
+                        ? "text-[#FAFAFA] bg-[#27272A] font-medium"
+                        : "text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#27272A]/50"
                     }`}
                   >
                     <Icon className="w-4 h-4" />
@@ -192,13 +191,13 @@ export function Navbar() {
                   </Link>
                 );
               })}
-              <div className="pt-2 border-t border-white/10 flex items-center justify-between">
+              <div className="pt-2 border-t border-[#27272A] flex items-center justify-between">
                 <div className="flex space-x-2">
                   <a
                     href={PERSONAL_INFO.gitHub}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg text-zinc-400 hover:text-white bg-white/5"
+                    className="p-2 rounded-lg text-[#A1A1AA] hover:text-[#FAFAFA] bg-[#09090B]"
                   >
                     <GithubIcon className="w-4 h-4" />
                   </a>
@@ -206,7 +205,7 @@ export function Navbar() {
                     href={PERSONAL_INFO.linkedIn}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg text-zinc-400 hover:text-[#00F0FF] bg-white/5"
+                    className="p-2 rounded-lg text-[#A1A1AA] hover:text-[#FAFAFA] bg-[#09090B]"
                   >
                     <LinkedinIcon className="w-4 h-4" />
                   </a>
@@ -214,7 +213,7 @@ export function Navbar() {
                 <a
                   href="/Praveen_T_FlowCV_Resume_2026-10-01 (1).pdf"
                   download="Praveen_T_Data_Engineer_Resume.pdf"
-                  className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-[#FFE600]/15 border border-[#FFE600]/50 text-[#FFE600] text-xs font-mono"
+                  className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-[#09090B] border border-[#27272A] text-[#FAFAFA] text-xs font-mono hover:border-[#10B981]"
                 >
                   <FileDown className="w-3.5 h-3.5" />
                   <span>Resume</span>

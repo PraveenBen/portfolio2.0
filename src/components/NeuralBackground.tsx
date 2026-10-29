@@ -8,7 +8,6 @@ interface Node {
   vx: number;
   vy: number;
   radius: number;
-  color: string;
 }
 
 interface Packet {
@@ -16,7 +15,6 @@ interface Packet {
   targetIndex: number;
   progress: number;
   speed: number;
-  color: string;
 }
 
 export function NeuralBackground() {
@@ -41,37 +39,34 @@ export function NeuralBackground() {
 
     window.addEventListener("resize", handleResize);
 
-    const colors = ["#00F0FF", "#FFE600", "#39FF14", "#A855F7"];
     let nodes: Node[] = [];
     let packets: Packet[] = [];
 
     const initNodes = () => {
       nodes = [];
       packets = [];
-      const count = Math.min(Math.floor((width * height) / 25000), 55);
+      // Subtle node count
+      const count = Math.min(Math.floor((width * height) / 32000), 40);
       for (let i = 0; i < count; i++) {
         nodes.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.45,
-          vy: (Math.random() - 0.5) * 0.45,
-          radius: Math.random() * 1.8 + 1.2,
-          color: colors[Math.floor(Math.random() * colors.length)],
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          radius: Math.random() * 1.4 + 1.0,
         });
       }
     };
 
     initNodes();
 
-    // Spawn packets intermittently along links
     const maybeSpawnPacket = (i: number, j: number) => {
-      if (packets.length < 18 && Math.random() < 0.015) {
+      if (packets.length < 10 && Math.random() < 0.012) {
         packets.push({
           sourceIndex: i,
           targetIndex: j,
           progress: 0,
-          speed: Math.random() * 0.012 + 0.008,
-          color: colors[Math.floor(Math.random() * colors.length)],
+          speed: Math.random() * 0.01 + 0.006,
         });
       }
     };
@@ -79,23 +74,8 @@ export function NeuralBackground() {
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Draw subtle ambient glow gradients
-      const radial = ctx.createRadialGradient(
-        width * 0.5,
-        height * 0.3,
-        100,
-        width * 0.5,
-        height * 0.5,
-        width * 0.8
-      );
-      radial.addColorStop(0, "rgba(0, 240, 255, 0.025)");
-      radial.addColorStop(0.5, "rgba(168, 85, 247, 0.015)");
-      radial.addColorStop(1, "rgba(5, 5, 5, 0)");
-      ctx.fillStyle = radial;
-      ctx.fillRect(0, 0, width, height);
-
-      // Update and draw connections
-      const maxDistance = 150;
+      // Monochromatic connection distance
+      const maxDistance = 140;
       for (let i = 0; i < nodes.length; i++) {
         const nodeA = nodes[i];
         nodeA.x += nodeA.vx;
@@ -111,29 +91,27 @@ export function NeuralBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < maxDistance) {
-            const alpha = (1 - dist / maxDistance) * 0.18;
+            // Subtle monochromatic line in Color 3 (#A1A1AA)
+            const alpha = (1 - dist / maxDistance) * 0.08;
             ctx.beginPath();
             ctx.moveTo(nodeA.x, nodeA.y);
             ctx.lineTo(nodeB.x, nodeB.y);
-            ctx.strokeStyle = `rgba(0, 240, 255, ${alpha})`;
-            ctx.lineWidth = 0.8;
+            ctx.strokeStyle = `rgba(161, 161, 170, ${alpha})`;
+            ctx.lineWidth = 0.75;
             ctx.stroke();
 
             maybeSpawnPacket(i, j);
           }
         }
 
-        // Draw node
+        // Draw monochromatic node (Color 3: #A1A1AA)
         ctx.beginPath();
         ctx.arc(nodeA.x, nodeA.y, nodeA.radius, 0, Math.PI * 2);
-        ctx.fillStyle = nodeA.color;
-        ctx.shadowColor = nodeA.color;
-        ctx.shadowBlur = 6;
+        ctx.fillStyle = "rgba(161, 161, 170, 0.45)";
         ctx.fill();
-        ctx.shadowBlur = 0;
       }
 
-      // Update and draw data stream packets
+      // Draw subtle single-accent packets (#10B981)
       for (let p = packets.length - 1; p >= 0; p--) {
         const packet = packets[p];
         packet.progress += packet.speed;
@@ -154,12 +132,9 @@ export function NeuralBackground() {
         const py = source.y + (target.y - source.y) * packet.progress;
 
         ctx.beginPath();
-        ctx.arc(px, py, 2.2, 0, Math.PI * 2);
-        ctx.fillStyle = packet.color;
-        ctx.shadowColor = packet.color;
-        ctx.shadowBlur = 8;
+        ctx.arc(px, py, 1.8, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(16, 185, 129, 0.7)";
         ctx.fill();
-        ctx.shadowBlur = 0;
       }
 
       animationFrameId = requestAnimationFrame(render);
@@ -174,11 +149,10 @@ export function NeuralBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      <div className="absolute inset-0 matrix-grid opacity-60" />
-      <div className="scanline" />
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#09090B]">
+      <div className="absolute inset-0 mono-grid opacity-60" />
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/40 via-transparent to-[#050505]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#09090B]/60 via-transparent to-[#09090B]" />
     </div>
   );
 }
