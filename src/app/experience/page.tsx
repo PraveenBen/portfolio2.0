@@ -56,7 +56,7 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* Hybrid Skill Showcase */}
+      {/* Core Technical Competencies */}
       <HybridSkillMatrix />
 
       {/* Education & Certifications Grid */}

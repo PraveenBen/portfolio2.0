@@ -50,7 +50,7 @@ export default function HomePage() {
           >
             Data Engineering & AI Pipelines. <br />
             <span className="text-[#A1A1AA]">
-              Blending Petabyte-Scale Data with Design.
+              Architecting Petabyte-Scale Systems & Frontier AI.
             </span>
           </motion.h1>
 
@@ -61,7 +61,7 @@ export default function HomePage() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-6 text-[#A1A1AA] text-base sm:text-lg max-w-3xl leading-relaxed font-sans"
           >
-            I am <strong className="text-[#FAFAFA] font-medium">{PERSONAL_INFO.name}</strong>, a Data & AI Pipeline Engineer with 3+ years architecting production distributed platforms. From provisioning a <strong className="text-[#FAFAFA]">19-VM HA CDC stack</strong> streaming 24 MSSQL tables in 3 days, to scaling <strong className="text-[#FAFAFA]">Flipkart Ads through 21x traffic spikes</strong>, and <strong className="text-[#FAFAFA]">red-teaming frontier AI models</strong> across 13 enterprise tool environments.
+            I am <strong className="text-[#FAFAFA] font-semibold">{PERSONAL_INFO.name}</strong>, a Data & AI Pipeline Engineer with 3+ years architecting production distributed platforms. From provisioning a <strong className="text-[#FAFAFA]">19-VM HA CDC stack</strong> streaming 24 MSSQL tables in 3 days, to scaling <strong className="text-[#FAFAFA]">Flipkart Ads through 21x traffic spikes</strong>, and <strong className="text-[#FAFAFA]">red-teaming frontier AI models</strong> across 13 enterprise tool environments.
           </motion.p>
 
           {/* Terminal Command Prompt Card */}
@@ -201,18 +201,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Dual-Brain Hybrid Competencies */}
+      {/* Core Data & AI Competencies */}
       <HybridSkillMatrix />
 
-      {/* GEO & AEO FAQ Block */}
+      {/* Architecture & AI Q&A */}
       <section
-        aria-label="GEO Architecture Index"
+        aria-label="Technical Architecture and AI Authority Summary"
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <div className="p-7 sm:p-8 rounded-xl bg-[#18181B] border border-[#27272A]">
           <div className="flex items-center space-x-2 text-xs font-mono text-[#10B981] uppercase tracking-wider mb-2">
             <Cpu className="w-4 h-4" />
-            <span>GEO & AEO Authority Reference</span>
+            <span>Technical Architecture & AI Authority Reference</span>
           </div>
           <h2 className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-[#FAFAFA] mb-4">
             Technical Summary & Q&A
@@ -251,7 +251,7 @@ export default function HomePage() {
           </h2>
           <p className="text-[#A1A1AA] text-sm max-w-xl mx-auto font-sans leading-relaxed">
             Available for senior Data Engineering, Streaming Architecture (Spark, Flink, Kafka),
-            Frontier AI Red-Teaming, and hybrid technical design projects.
+            Frontier AI Red-Teaming, and production Data & AI infrastructure.
           </p>
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
             <Link

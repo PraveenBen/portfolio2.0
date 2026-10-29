@@ -96,7 +96,7 @@ export default function ContactPage() {
         </h1>
         <p className="text-[#A1A1AA] text-sm sm:text-base leading-relaxed font-sans">
           Available for senior Data Engineering, Streaming Architecture (Spark, Flink, Kafka),
-          Frontier AI Red-Teaming, and hybrid technical design projects.
+          Frontier AI Red-Teaming, and production Data & AI infrastructure.
         </p>
       </div>
 
@@ -115,7 +115,7 @@ export default function ContactPage() {
 
             <p className="text-[#A1A1AA] text-sm font-sans leading-relaxed">
               Rapid turnaround on architecture reviews, distributed system audits,
-              and high-throughput pipeline design.
+              and high-throughput pipeline architecture.
             </p>
 
             <div className="flex items-center space-x-2 text-xs font-mono text-[#A1A1AA] pt-1">
@@ -311,8 +311,8 @@ export default function ContactPage() {
                         <option value="Database Performance Tuning">
                           Database Performance Tuning (MSSQL)
                         </option>
-                        <option value="Digital Marketing / GEO / SEO">
-                          Digital Marketing / GEO / Visual Design
+                        <option value="Cloud Data Infrastructure & GKE">
+                          Cloud Platforms (GCP, Databricks, GKE)
                         </option>
                         <option value="Other">Full-Time / Advisory / Other</option>
                       </select>

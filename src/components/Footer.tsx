@@ -138,7 +138,7 @@ export function Footer() {
             <span>•</span>
             <span>LLM Red-Teaming</span>
             <span>•</span>
-            <span>AEO / GEO</span>
+            <span>ClickHouse & OLAP</span>
           </div>
 
           <div>

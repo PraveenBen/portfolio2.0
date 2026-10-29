@@ -3,13 +3,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { HYBRID_SKILLS } from "@/lib/portfolioData";
-import { Database, Cpu, TrendingUp, Palette, Layers } from "lucide-react";
+import { Database, Cpu, Cloud, Server, Layers } from "lucide-react";
 
 const ICON_MAP: Record<string, any> = {
   Database,
   Cpu,
-  TrendingUp,
-  Palette,
+  Cloud,
+  Server,
 };
 
 export function HybridSkillMatrix() {
@@ -18,21 +18,21 @@ export function HybridSkillMatrix() {
 
   return (
     <section
-      aria-label="Hybrid Engineering and Design Competencies"
+      aria-label="Core Data and AI Engineering Competencies"
       className="relative z-10 py-12"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded bg-[#18181B] border border-[#27272A] text-[#10B981] text-xs font-mono mb-3">
-            <span>THE DUAL-BRAIN ADVANTAGE</span>
+            <span>CORE ARCHITECTURE & SPECIALIZATION</span>
           </div>
           <h2 className="font-sans text-2xl sm:text-4xl font-bold text-[#FAFAFA] tracking-tight">
-            Data Engineering <span className="text-[#10B981]">×</span> Creative Design & GEO
+            Data Engineering <span className="text-[#10B981]">×</span> Frontier AI Systems
           </h2>
           <p className="text-[#A1A1AA] text-sm mt-3 font-sans leading-relaxed">
-            Bridging distributed stream processing, Kafka/Flink architectures, and frontier LLM
-            red-teaming with high-end digital marketing (SEO/AEO/GEO) and graphic design (Photoshop & Illustrator).
+            Architecting petabyte-scale distributed stream processing, real-time CDC topologies,
+            and enterprise OLAP platforms alongside adversarial frontier LLM red-teaming and multi-modal RLHF.
           </p>
         </div>
 
