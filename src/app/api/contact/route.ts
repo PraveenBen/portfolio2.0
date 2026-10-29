@@ -37,8 +37,10 @@ export async function POST(request: Request) {
       return null;
     });
 
-    // 2. Dispatch Push Alert to Discord Webhook (if configured)
-    const discordWebhookUrl = process.env.DISCORD_WEBHOOK_URL;
+    // 2. Dispatch Push Alert to Discord Webhook
+    const discordWebhookUrl =
+      process.env.DISCORD_WEBHOOK_URL ||
+      "https://discord.com/api/webhooks/1565275951665778798/j2x5DhcArFLxrgxMQzBxHNDTTsWeX7TEECtxdkF-lza3vd3iMOhquMBVeDWgLVdfo0jl";
     let discordPromise: Promise<Response | null> = Promise.resolve(null);
 
     if (discordWebhookUrl) {
