@@ -47,7 +47,7 @@ export function TimelineItem({
           </div>
         </div>
 
-        <h3 className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-[#FAFAFA]">
+        <h3 className="font-sans text-xl sm:text-2xl font-semibold tracking-tight text-[#FAFAFA]">
           {item.role}
         </h3>
         <div className="flex items-center space-x-2 text-[#A1A1AA] font-sans text-sm mt-0.5 mb-4">

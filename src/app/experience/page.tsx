@@ -23,7 +23,7 @@ export default function ExperiencePage() {
           <Briefcase className="w-3.5 h-3.5" />
           <span>CAREER TRAJECTORY & COMPETENCIES</span>
         </div>
-        <h1 className="font-sans text-3xl sm:text-5xl font-extrabold text-[#FAFAFA] tracking-tight">
+        <h1 className="font-sans text-3xl sm:text-5xl font-semibold text-[#FAFAFA] tracking-tight">
           Production Experience & Credentials.
         </h1>
         <p className="text-[#A1A1AA] text-sm sm:text-base leading-relaxed font-sans">
@@ -62,7 +62,7 @@ export default function ExperiencePage() {
       {/* Education & Certifications Grid */}
       <section aria-label="Education and Certifications" className="space-y-6">
         <div className="pb-3 border-b border-[#27272A]">
-          <h2 className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-[#FAFAFA] flex items-center space-x-2">
+          <h2 className="font-sans text-xl sm:text-2xl font-semibold tracking-tight text-[#FAFAFA] flex items-center space-x-2">
             <GraduationCap className="w-5 h-5 text-[#A1A1AA]" />
             <span>Education & Verified Credentials</span>
           </h2>
@@ -84,7 +84,7 @@ export default function ExperiencePage() {
                     <span className="text-[#10B981]">{edu.period}</span>
                     <span className="text-[#A1A1AA]">{edu.location}</span>
                   </div>
-                  <h4 className="font-sans text-base font-bold text-[#FAFAFA] tracking-tight">
+                  <h4 className="font-sans text-base font-semibold text-[#FAFAFA] tracking-tight">
                     {edu.degree}
                   </h4>
                   <div className="text-xs font-mono text-[#A1A1AA]">

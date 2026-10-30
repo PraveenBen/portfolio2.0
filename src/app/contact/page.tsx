@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Mail,
-  Phone,
   MapPin,
   Send,
   CheckCircle2,
@@ -91,12 +90,11 @@ export default function ContactPage() {
           <Terminal className="w-3.5 h-3.5" />
           <span>CONTACT TERMINAL</span>
         </div>
-        <h1 className="font-sans text-3xl sm:text-5xl font-extrabold text-[#FAFAFA] tracking-tight">
+        <h1 className="font-sans text-3xl sm:text-4xl font-semibold text-[#FAFAFA] tracking-tight">
           Initialize Connection.
         </h1>
-        <p className="text-[#A1A1AA] text-sm sm:text-base leading-relaxed font-sans">
-          Available for senior Data Engineering, Streaming Architecture (Spark, Flink, Kafka),
-          Frontier AI Red-Teaming, and production Data & AI infrastructure.
+        <p className="text-[#A1A1AA] text-sm sm:text-base leading-relaxed font-sans font-normal">
+          Available for remote contract and full-time roles with US/UK startups. Specializing in real-time streaming, CDC pipelines, and LLM evaluation.
         </p>
       </div>
 
@@ -113,18 +111,18 @@ export default function ContactPage() {
               <span className="text-[#A1A1AA]">BANGALORE</span>
             </div>
 
-            <p className="text-[#A1A1AA] text-sm font-sans leading-relaxed">
+            <p className="text-[#A1A1AA] text-sm font-sans font-normal leading-relaxed">
               Rapid turnaround on architecture reviews, distributed system audits,
-              and high-throughput pipeline architecture.
+              and high-throughput pipeline engineering.
             </p>
 
             <div className="flex items-center space-x-2 text-xs font-mono text-[#A1A1AA] pt-1">
               <Clock className="w-3.5 h-3.5 text-[#10B981]" />
-              <span>Response Window: Typically &lt; 4 hours</span>
+              <span>Response Window: Typically &lt; 1 business day</span>
             </div>
           </div>
 
-          {/* Direct Details Grid */}
+          {/* Direct Details Grid (Phone removed) */}
           <div className="space-y-2.5 font-mono text-xs">
             <a
               href={`mailto:${PERSONAL_INFO.email}`}
@@ -135,23 +133,8 @@ export default function ContactPage() {
               </div>
               <div className="flex-1 truncate">
                 <div className="text-[10px] text-[#A1A1AA] uppercase">Email</div>
-                <div className="font-semibold text-sm text-[#FAFAFA] truncate">
+                <div className="font-medium text-sm text-[#FAFAFA] truncate">
                   {PERSONAL_INFO.email}
-                </div>
-              </div>
-            </a>
-
-            <a
-              href={`tel:${PERSONAL_INFO.phone.replace(/\s+/g, "")}`}
-              className="p-4 rounded-xl bg-[#18181B] border border-[#27272A] hover:border-[#3F3F46] flex items-center space-x-3 text-[#A1A1AA] hover:text-[#FAFAFA] transition-colors"
-            >
-              <div className="p-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-[#FAFAFA]">
-                <Phone className="w-4 h-4" />
-              </div>
-              <div className="flex-1">
-                <div className="text-[10px] text-[#A1A1AA] uppercase">Phone</div>
-                <div className="font-semibold text-sm text-[#FAFAFA]">
-                  {PERSONAL_INFO.phone}
                 </div>
               </div>
             </a>
@@ -162,7 +145,7 @@ export default function ContactPage() {
               </div>
               <div className="flex-1">
                 <div className="text-[10px] text-[#A1A1AA] uppercase">Location</div>
-                <div className="font-semibold text-sm text-[#FAFAFA]">
+                <div className="font-medium text-sm text-[#FAFAFA]">
                   {PERSONAL_INFO.location}
                 </div>
               </div>
@@ -204,7 +187,7 @@ export default function ContactPage() {
             <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#27272A]">
               <div className="flex items-center space-x-2">
                 <Terminal className="w-4 h-4 text-[#10B981]" />
-                <h2 className="font-sans text-base font-bold tracking-tight text-[#FAFAFA]">
+                <h2 className="font-sans text-base font-semibold tracking-tight text-[#FAFAFA]">
                   Send Message
                 </h2>
               </div>
@@ -224,11 +207,11 @@ export default function ContactPage() {
                   <div className="w-14 h-14 rounded-full bg-[#09090B] border border-[#10B981] text-[#10B981] flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-7 h-7" />
                   </div>
-                  <h3 className="font-sans text-xl font-bold tracking-tight text-[#FAFAFA]">
+                  <h3 className="font-sans text-xl font-semibold tracking-tight text-[#FAFAFA]">
                     Message Dispatched Successfully
                   </h3>
-                  <p className="text-[#A1A1AA] text-sm max-w-md mx-auto font-sans leading-relaxed">
-                    Thank you, <strong className="text-[#FAFAFA]">{formData.name}</strong>. Your inquiry has been routed into Praveen&apos;s primary inbox. You will receive a response shortly.
+                  <p className="text-[#A1A1AA] text-sm max-w-md mx-auto font-sans font-normal leading-relaxed">
+                    Thank you, <span className="text-[#FAFAFA] font-medium">{formData.name}</span>. Your inquiry has been routed into Praveen’s primary inbox. You will receive a response shortly.
                   </p>
                   <div className="pt-2">
                     <button

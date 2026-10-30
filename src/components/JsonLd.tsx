@@ -23,7 +23,6 @@ export function JsonLd() {
           addressCountry: "India",
         },
         email: PERSONAL_INFO.email,
-        telephone: PERSONAL_INFO.phone,
         knowsAbout: [
           "Apache Spark",
           "Apache Kafka",
@@ -49,7 +48,7 @@ export function JsonLd() {
           "@type": "Occupation",
           name: "Data & AI Pipeline Engineer",
           occupationalCategory: "15-1252.00 - Software Developers",
-          skills: "Petabyte-Scale Stream Processing, Real-Time CDC, LLM Red-Teaming, High Availability Distributed Systems",
+          skills: "Real-Time Stream Processing, Change Data Capture (CDC), LLM Evaluation, High Availability Distributed Systems",
         },
         alumniOf: [
           {
@@ -68,9 +67,9 @@ export function JsonLd() {
         "@type": "WebSite",
         "@id": "https://praveen-portfolio.vercel.app/#website",
         url: "https://praveen-portfolio.vercel.app",
-        name: "Praveen T | Data & AI Pipeline Engineer Portfolio",
+        name: "Praveen T | Data Engineer: Real-Time Pipelines, Kafka, Flink, ClickHouse",
         description:
-          "Official portfolio of Praveen T, Data & AI Pipeline Engineer specializing in Petabyte-Scale Data, Real-Time CDC, and Frontier AI Red-Teaming.",
+          "Official portfolio of Praveen T, Data & AI Pipeline Engineer specializing in streaming pipelines, real-time CDC, and LLM trade extraction.",
         publisher: {
           "@id": "https://praveen-portfolio.vercel.app/#person",
         },

@@ -66,7 +66,7 @@ function CounterItem({
           </span>
         </div>
 
-        <div className="font-mono font-bold text-3xl sm:text-4xl text-[#FAFAFA] tracking-tight">
+        <div className="font-mono font-semibold text-3xl sm:text-4xl text-[#FAFAFA] tracking-tight">
           {prefix && <span className="text-[#A1A1AA] text-2xl mr-0.5">{prefix}</span>}
           <span>{Number.isInteger(value) ? Math.floor(displayValue) : displayValue.toFixed(1)}</span>
           {suffix && <span className="text-[#10B981] text-2xl ml-0.5">{suffix}</span>}

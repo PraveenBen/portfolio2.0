@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Terminal } from "lucide-react";
+import { Mail, MapPin, Terminal } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 import { PERSONAL_INFO } from "@/lib/portfolioData";
 
@@ -21,9 +21,8 @@ export function Footer() {
                 {PERSONAL_INFO.name}
               </span>
             </div>
-            <p className="text-[#A1A1AA] text-sm max-w-md leading-relaxed font-sans">
-              Data & AI Pipeline Engineer specialized in Petabyte-Scale streaming systems,
-              real-time CDC for solar manufacturing, and adversarial red-teaming for frontier LLMs.
+            <p className="text-[#A1A1AA] text-sm max-w-md leading-relaxed font-sans font-normal">
+              Data &amp; AI Pipeline Engineer building streaming systems that stay correct under peak load. Real-time CDC, high-throughput Flink and Kafka pipelines, and compliance-checked LLM extraction.
             </p>
             <div className="flex items-center space-x-3 pt-2 text-xs font-mono text-[#A1A1AA]">
               <span className="flex items-center space-x-1.5 text-[#FAFAFA]">
@@ -40,16 +39,16 @@ export function Footer() {
 
           {/* Column 2: Navigation Links */}
           <div className="space-y-3">
-            <h3 className="font-mono text-xs font-medium uppercase tracking-wider text-[#FAFAFA]">
+            <h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-[#FAFAFA]">
               Navigation
             </h3>
-            <ul className="space-y-2 text-sm font-sans">
+            <ul className="space-y-2 text-sm font-sans font-normal">
               <li>
                 <Link
                   href="/"
                   className="text-[#A1A1AA] hover:text-[#FAFAFA] transition-colors"
                 >
-                  Overview & Metrics
+                  Overview &amp; Metrics
                 </Link>
               </li>
               <li>
@@ -57,7 +56,7 @@ export function Footer() {
                   href="/projects"
                   className="text-[#A1A1AA] hover:text-[#FAFAFA] transition-colors"
                 >
-                  Case Studies & Proofs
+                  Case Studies &amp; Proofs
                 </Link>
               </li>
               <li>
@@ -65,7 +64,7 @@ export function Footer() {
                   href="/experience"
                   className="text-[#A1A1AA] hover:text-[#FAFAFA] transition-colors"
                 >
-                  Experience & Skills
+                  Experience &amp; Skills
                 </Link>
               </li>
               <li>
@@ -81,10 +80,10 @@ export function Footer() {
 
           {/* Column 3: Direct Connect */}
           <div className="space-y-3">
-            <h3 className="font-mono text-xs font-medium uppercase tracking-wider text-[#FAFAFA]">
+            <h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-[#FAFAFA]">
               Contact
             </h3>
-            <ul className="space-y-2.5 text-sm font-sans text-[#A1A1AA]">
+            <ul className="space-y-2.5 text-sm font-sans text-[#A1A1AA] font-normal">
               <li>
                 <a
                   href={`mailto:${PERSONAL_INFO.email}`}
@@ -92,15 +91,6 @@ export function Footer() {
                 >
                   <Mail className="w-3.5 h-3.5 text-[#A1A1AA]" />
                   <span className="truncate">{PERSONAL_INFO.email}</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`tel:${PERSONAL_INFO.phone.replace(/\s+/g, "")}`}
-                  className="flex items-center space-x-2 hover:text-[#FAFAFA] transition-colors"
-                >
-                  <Phone className="w-3.5 h-3.5 text-[#A1A1AA]" />
-                  <span>{PERSONAL_INFO.phone}</span>
                 </a>
               </li>
               <li className="flex items-center space-x-2 pt-1">
@@ -134,15 +124,15 @@ export function Footer() {
             <span>•</span>
             <span>Real-Time CDC</span>
             <span>•</span>
-            <span>Kafka & Flink</span>
+            <span>Kafka &amp; Flink</span>
             <span>•</span>
-            <span>LLM Red-Teaming</span>
+            <span>LLM Evaluation</span>
             <span>•</span>
-            <span>ClickHouse & OLAP</span>
+            <span>ClickHouse &amp; OLAP</span>
           </div>
 
           <div>
-            <span>© 2026 {PERSONAL_INFO.name}. All rights reserved.</span>
+            <span>© 2026 Praveen T. All rights reserved.</span>
           </div>
         </div>
       </div>

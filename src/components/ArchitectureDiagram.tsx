@@ -55,7 +55,7 @@ const PIPELINE_STEPS: PipelineStep[] = [
     icon: Server,
     tech: "ClickHouse (9 Nodes) • Gemini 3.5 • Mistral",
     role: "Distributed Columnar Storage & LLM Reasoning",
-    telemetry: "<2s end-to-end freshness • >98% accuracy",
+    telemetry: "<2s end-to-end freshness • SEBI Rule Verified",
     detail: "Distributed 9-node ClickHouse clusters powering instant stage-level queries, combined with Gemini 3.5 & Mistral for automated SEBI compliance.",
   },
   {
@@ -85,7 +85,7 @@ export function ArchitectureDiagram() {
               Pipeline Topology Simulation
             </span>
           </div>
-          <h3 className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-[#FAFAFA] mt-1">
+          <h3 className="font-sans text-xl sm:text-2xl font-semibold tracking-tight text-[#FAFAFA] mt-1">
             End-to-End Enterprise Data Flow
           </h3>
         </div>
@@ -149,7 +149,7 @@ export function ArchitectureDiagram() {
               </span>
             </div>
 
-            <h4 className="font-sans text-base sm:text-lg font-bold tracking-tight text-[#FAFAFA]">
+            <h4 className="font-sans text-base sm:text-lg font-semibold tracking-tight text-[#FAFAFA]">
               {currentStep.name}: {currentStep.tech}
             </h4>
 

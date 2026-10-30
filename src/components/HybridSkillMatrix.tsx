@@ -27,11 +27,11 @@ export function HybridSkillMatrix() {
           <div className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded bg-[#18181B] border border-[#27272A] text-[#10B981] text-xs font-mono mb-3">
             <span>CORE ARCHITECTURE & SPECIALIZATION</span>
           </div>
-          <h2 className="font-sans text-2xl sm:text-4xl font-bold text-[#FAFAFA] tracking-tight">
+          <h2 className="font-sans text-2xl sm:text-4xl font-semibold text-[#FAFAFA] tracking-tight">
             Data Engineering <span className="text-[#10B981]">×</span> Frontier AI Systems
           </h2>
           <p className="text-[#A1A1AA] text-sm mt-3 font-sans leading-relaxed">
-            Architecting petabyte-scale distributed stream processing, real-time CDC topologies,
+            High-throughput distributed stream processing, real-time CDC topologies,
             and enterprise OLAP platforms alongside adversarial frontier LLM red-teaming and multi-modal RLHF.
           </p>
         </div>
@@ -90,7 +90,7 @@ export function HybridSkillMatrix() {
                   {activeCategory.tagline}
                 </span>
               </div>
-              <h3 className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-[#FAFAFA] mt-1">
+              <h3 className="font-sans text-xl sm:text-2xl font-semibold tracking-tight text-[#FAFAFA] mt-1">
                 {activeCategory.title}
               </h3>
             </div>

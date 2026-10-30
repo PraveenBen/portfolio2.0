@@ -60,7 +60,7 @@ export function Navbar() {
               className="flex items-center space-x-2.5 group focus:outline-none"
             >
               <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-[#09090B] border border-[#27272A] text-[#FAFAFA] group-hover:border-[#10B981] transition-colors">
-                <span className="font-mono font-bold text-xs">PT</span>
+                <span className="font-mono font-semibold text-xs">PT</span>
               </div>
               <div className="flex flex-col">
                 <span className="font-sans text-xs font-semibold tracking-tight text-[#FAFAFA] group-hover:text-[#10B981] transition-colors">

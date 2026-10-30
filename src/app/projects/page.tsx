@@ -39,13 +39,13 @@ export default function ProjectsPage() {
           <FolderGit2 className="w-3.5 h-3.5" />
           <span>PRODUCTION ARCHITECTURE & PROOFS</span>
         </div>
-        <h1 className="font-sans text-3xl sm:text-5xl font-extrabold text-[#FAFAFA] tracking-tight">
+        <h1 className="font-sans text-3xl sm:text-5xl font-semibold text-[#FAFAFA] tracking-tight">
           Engineered Systems & Proofs.
         </h1>
         <p className="text-[#A1A1AA] text-sm sm:text-base leading-relaxed font-sans">
           Deep dives into production distributed topologies: from 19-VM cross-cloud CDC pipelines
           streaming 24 solar manufacturing tables, to RocksDB stateful deduplication scaling through
-          21x Flipkart traffic spikes, and adversarial multi-hop red-teaming across 13 mock tools.
+          21x Flipkart traffic spikes, and adversarial multi-hop red-teaming across mock workplace tools.
         </p>
       </div>
 
