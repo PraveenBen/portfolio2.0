@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -59,8 +60,23 @@ export function Navbar() {
               href="/"
               className="flex items-center space-x-2.5 group focus:outline-none"
             >
-              <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-[#09090B] border border-[#27272A] text-[#FAFAFA] group-hover:border-[#10B981] transition-colors">
-                <span className="font-mono font-semibold text-xs">PT</span>
+              <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-[#09090B] border border-[#27272A] p-1 group-hover:border-[#10B981] transition-colors overflow-hidden relative">
+                <Image
+                  src="/logo.png"
+                  alt="Praveen T Logo"
+                  width={28}
+                  height={28}
+                  className="w-full h-full object-contain transition-opacity duration-200 group-hover:opacity-0"
+                  priority
+                />
+                <Image
+                  src="/logo-emerald.png"
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="w-full h-full object-contain absolute inset-0 p-1 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                  aria-hidden="true"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-sans text-xs font-semibold tracking-tight text-[#FAFAFA] group-hover:text-[#10B981] transition-colors">

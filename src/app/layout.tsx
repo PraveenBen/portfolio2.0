@@ -51,6 +51,13 @@ export const metadata: Metadata = {
   authors: [{ name: PERSONAL_INFO.name, url: PERSONAL_INFO.gitHub }],
   creator: PERSONAL_INFO.name,
   publisher: PERSONAL_INFO.name,
+  icons: {
+    icon: [
+      { url: "/logo.png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/logo-192.png" }],
+  },
   robots: {
     index: true,
     follow: true,

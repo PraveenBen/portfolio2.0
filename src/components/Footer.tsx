@@ -2,7 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { Mail, MapPin, Terminal } from "lucide-react";
+import Image from "next/image";
+import { Mail, MapPin } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 import { PERSONAL_INFO } from "@/lib/portfolioData";
 
@@ -14,8 +15,14 @@ export function Footer() {
           {/* Column 1: Info & Brand */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center space-x-2.5">
-              <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-[#18181B] border border-[#27272A] text-[#FAFAFA]">
-                <Terminal className="w-3.5 h-3.5" />
+              <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-[#18181B] border border-[#27272A] p-1">
+                <Image
+                  src="/logo.png"
+                  alt="Praveen T Logo"
+                  width={22}
+                  height={22}
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="font-sans text-sm font-semibold text-[#FAFAFA] tracking-tight">
                 {PERSONAL_INFO.name}
